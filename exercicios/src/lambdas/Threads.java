@@ -5,14 +5,12 @@ public class Threads {
 	public static void main(String[] args) {
 		
 		Runnable trabalho1 = new Trabalho1();
-		Runnable trabalho2 = new Runnable() {
-			public void run() {
-				for (int i = 0; i < 10; i++) {
-					System.out.println("Tarefa #02");
-					try {
-						Thread.sleep(100);						
-					} catch (Exception e) {
-					}
+		Runnable trabalho2 = () -> {
+			for (int i = 0; i < 10; i++) {
+				System.out.println("Tarefa #02");
+				try {
+					Thread.sleep(100);
+				} catch (Exception e) {
 				}
 			}
 		};

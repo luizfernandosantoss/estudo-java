@@ -1,5 +1,8 @@
 package lambdas;
 
+import java.io.PrintStream;
+import java.util.Formatter;
+
 public class Produto extends Object {
 
 	final String nome;
@@ -14,6 +17,6 @@ public class Produto extends Object {
 	
 	public String toString() {
 		double precoFinal = preco * (1 - desconto);
-		return nome + " tem preço de R$" + precoFinal; 
+		return nome + " tem preço de R$" + precoFinal;
 	}
 }

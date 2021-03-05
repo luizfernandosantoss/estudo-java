@@ -4,7 +4,7 @@ public class Carro {
 
 	final Motor motor;
 	
-	Carro() {
+	public Carro() {
 		this.motor = new Motor(this);
 	}
 	
@@ -20,8 +20,8 @@ public class Carro {
 		}
 	}
 	
-	void ligar() {
-		motor.ligado = true;
+	public boolean ligar() {
+		return motor.ligado = true;
 	}
 	
 	void desligar() {
