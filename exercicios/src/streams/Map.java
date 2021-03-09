@@ -5,6 +5,8 @@ import java.util.List;
 import java.util.function.Consumer;
 import java.util.function.UnaryOperator;
 
+import static streams.Utilitarios.maiuscula;
+
 public class Map {
 	
 	public static void main(String[] args) {
@@ -12,6 +14,7 @@ public class Map {
 		Consumer<String> print = System.out::print;
 		
 		List<String> marcas = Arrays.asList("BMW ", "Audi ", "Honda ");
+		marcas.stream().map(s -> s + "!!");
 		marcas.stream().map(m -> m.toUpperCase()).forEach(print);
 		
 		// UnaryOperator<String> maiuscula = n -> n.toUpperCase();
@@ -20,7 +23,7 @@ public class Map {
 				
 		System.out.println("\n\nUsando composição...");
 		marcas.stream()
-			.map(Utilitarios.maiuscula)
+			.map(maiuscula)
 			.map(primeiraLetra)
 			.map(Utilitarios::grito)
 			.forEach(print);

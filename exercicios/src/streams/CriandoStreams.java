@@ -15,16 +15,16 @@ public class CriandoStreams {
 		Stream<String> langs = Stream.of("Java ", "Lua ", "JS\n");
 		langs.forEach(print);
 		
-		String[] maisLangs = { "Python ", "Lisp ", "Perl ", "Go\n" };
-		
+		String[] maisLangs = { "Python ", "Lisp ", "Perl ", "Go" };
+
 		Stream.of(maisLangs).forEach(print);
 		Arrays.stream(maisLangs).forEach(print);
-		Arrays.stream(maisLangs, 1, 4).forEach(print);
-		
+		Object[] objects = Arrays.stream(maisLangs, 1, maisLangs.length).toArray();
+
 		List<String> outrasLangs = Arrays.asList("C ", "PHP ", "Kotlin\n");
-		outrasLangs.stream().forEach(print);
+		outrasLangs.stream().sorted().forEach(print);
 		outrasLangs.parallelStream().forEach(print);
-		
+
 		// Stream.generate(() -> "a").forEach(print);
 		Stream.iterate(0, n -> n + 1).forEach(println);
 	}
